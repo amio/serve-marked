@@ -48,12 +48,12 @@ function generateGAScript (uaid) {
   if (typeof uaid !== 'string') return ''
 
   return `
-    <script async src="https://www.googletagmanager.com/gtag/js?id=${UAID}"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=${uaid}"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', '${UAID}');
+      gtag('config', '${uaid}');
     </script>
   `
 }
