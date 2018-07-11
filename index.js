@@ -18,7 +18,7 @@ function helmet (bodyHTML, options) {
     return options(bodyHTML)
   }
 
-  const { title = '', preset, inlineCSS, googleAnalyticsID } = options
+  const { title = '', preset, inlineCSS, trackingGA } = options
 
   return `<!DOCTYPE html>
     <html>
@@ -27,7 +27,7 @@ function helmet (bodyHTML, options) {
         <title>${title}</title>
         ${getPresetStyle(preset)}
         <style>${inlineCSS}</style>
-        ${generateGAScript(googleAnalyticsID)}
+        ${generateGAScript(trackingGA)}
       </head>
       <body>
         ${bodyHTML}

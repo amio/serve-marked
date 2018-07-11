@@ -16,7 +16,8 @@ const serveReadme = serveMarked('./README.md', {
   inlineCSS: `
     @import 'custom.css'
     body { color: #333 }
-  `
+  `,
+  trackingGA: 'UA-XXXXXX-X' // Google Analytics
 })
 
 http.createServer((req, res) => {
