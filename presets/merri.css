@@ -1,9 +1,16 @@
-body { max-width: 760px; padding: 0 1rem; margin: 0 auto; font: 16px Merriweather, sans-serif }
+body { max-width: 760px; padding: 0 1rem; margin: 0 auto; font: 16px Merriweather, sans-serif; color: #333 }
+
 h1, h2, h3, h4, h5 { margin: 1.5em 0 }
 h1 { font-size: 3rem; text-align: center; margin-bottom: 0.4em }
 h1 + p { text-align: center; color: #AAA }
+
+a { text-decoration: none; color: #06D }
+a:hover { text-decoration: underline }
+
+table { border-spacing: 0 }
 thead { display: none }
-td { line-height: 18px }
+td { padding: 0 1em 0 0; height: 24px; font: 14px/20px sans-serif }
+
 pre { padding: 16px; overflow: auto; font-size: 85%; line-height: 1.45; background-color: #f6f8fa; border-radius: 3px; }
 
 /* Merriweather latin */
