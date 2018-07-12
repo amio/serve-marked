@@ -7,7 +7,10 @@ module.exports = function (mdFile, helmetOptions) {
   const bodyHTML = marked(rawMD)
   const pageHTML = helmet(bodyHTML, helmetOptions)
   return function (req, res) {
-    res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'})
+    res.writeHead(200, {
+      'Content-Type': 'text/html; charset=utf-8',
+      'Cache-Control': 'public, max-age=360, s-maxage=86400'
+    })
     res.end(pageHTML)
   }
 }
