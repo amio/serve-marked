@@ -21,7 +21,14 @@ function helmet (bodyHTML, options) {
     return options(bodyHTML)
   }
 
-  const { title = '', preset, inlineCSS, trackingGA } = options
+  const {
+    title = '',
+    preset,
+    inlineCSS = '',
+    beforeHeadEnd = '',
+    beforeBodyEnd = '',
+    trackingGA
+  } = options
 
   return `<!DOCTYPE html>
     <html>
@@ -31,9 +38,11 @@ function helmet (bodyHTML, options) {
         ${getPresetStyle(preset)}
         <style>${inlineCSS}</style>
         ${generateGAScript(trackingGA)}
+        ${beforeHeadEnd}
       </head>
       <body>
         ${bodyHTML}
+        ${beforeBodyEnd}
       </body>
     </html>
   `
