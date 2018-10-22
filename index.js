@@ -22,12 +22,13 @@ function helmet (bodyHTML, options) {
   }
 
   const {
-    title = '',
     preset,
+    trackingGA,
+    title = '',
     inlineCSS = '',
+    contentClassName = 'markdown-body',
     beforeHeadEnd = '',
     beforeBodyEnd = '',
-    trackingGA
   } = options
 
   return `<!DOCTYPE html>
@@ -41,7 +42,9 @@ function helmet (bodyHTML, options) {
         ${beforeHeadEnd}
       </head>
       <body>
-        ${bodyHTML}
+        <div class="${contentClassName}">
+          ${bodyHTML}
+        </div>
         ${beforeBodyEnd}
       </body>
     </html>
