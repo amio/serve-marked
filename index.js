@@ -35,6 +35,7 @@ function helmet (bodyHTML, options) {
     <html>
       <head>
         <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width">
         <title>${title}</title>
         ${getPresetStyle(preset)}
         <style>${inlineCSS}</style>
