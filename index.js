@@ -9,7 +9,7 @@ module.exports = function (mdFile, helmetOptions) {
   return function (req, res) {
     res.writeHead(200, {
       'Content-Type': 'text/html; charset=utf-8',
-      'Cache-Control': 'public, max-age=360, s-maxage=86400'
+      'Cache-Control': 'public, max-age=360, s-maxage=86400, stale-while-revalidate=3600'
     })
     res.end(pageHTML)
   }
