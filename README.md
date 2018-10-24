@@ -10,15 +10,21 @@ Serve [marked][marked] rendered README.md file.
 const http = require('http')
 const serveMarked = require('serve-marked')
 
-const serveReadme = serveMarked('./README.md', {
-  title: 'Awesome Title', // page title
-  preset: 'merri',  // css preset
+// All options are optional
+const options = {
+  title: 'Awesome Project',
+  preset: 'merri',  // Available presets: 'merri', 'github'
+  contentClassName: 'markdown-body',
   inlineCSS: `
-    @import 'custom.css'
+    @import url('https://rsms.me/inter/inter-ui.css');
     body { color: #333 }
   `,
-  trackingGA: 'UA-XXXXXX-X' // Google Analytics
-})
+  beforeHeadEnd: '<meta name="description" content="...">',
+  beforeBodyEnd: '<script>/*...*/</script>',
+  trackingGA: 'UA-XXXXXX-X'
+}
+
+const serveReadme = serveMarked('./README.md', options)
 
 http.createServer((req, res) => {
   if (req.url === '/') return serveReadme(req, res)

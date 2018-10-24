@@ -15,7 +15,7 @@ module.exports = function (mdFile, helmetOptions) {
   }
 }
 
-function helmet (bodyHTML, options) {
+function helmet (bodyHTML, options = {}) {
   // Custom body wrapper
   if (typeof options === 'function') {
     return options(bodyHTML)
