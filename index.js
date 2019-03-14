@@ -8,8 +8,7 @@ module.exports = function (mdFile, helmetOptions) {
   const pageHTML = helmet(bodyHTML, helmetOptions)
   return function (req, res) {
     res.writeHead(200, {
-      'Content-Type': 'text/html; charset=utf-8',
-      'Cache-Control': 'public, max-age=360, s-maxage=86400, stale-while-revalidate=3600'
+      'Content-Type': 'text/html; charset=utf-8'
     })
     res.end(pageHTML)
   }
