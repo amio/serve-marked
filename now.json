@@ -2,9 +2,15 @@
   "version": 2,
   "alias": "serve-marked",
   "builds": [
-    { "src": "now-index.js", "use": "@now/node" }
+    { "src": "now-index.js", "use": "now-micro" }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "/now-index.js" }
+    {
+      "src": "/(.*)",
+      "dest": "/now-index.js",
+      "headers": {
+        "cache-control": "s-maxage=86400"
+      }
+    }
   ]
 }

@@ -1,7 +1,10 @@
+const path = require('path')
 const http = require('http')
 const serveMarked = require('.')
 
-const serveReadme = serveMarked('./README.md', {
+const readmeFile = path.join(__dirname, 'README.md')
+
+module.exports = serveMarked(readmeFile, {
   title: 'serve-marked: serve README.md at ease',
   inlineCSS: `
     .markdown-body h1 + p {
@@ -11,4 +14,6 @@ const serveReadme = serveMarked('./README.md', {
   `
 })
 
-http.createServer(serveReadme).listen(3000)
+if (require.main === module) {
+  http.createServer(module.exports).listen(3000)
+}

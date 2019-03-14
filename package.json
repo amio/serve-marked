@@ -4,9 +4,6 @@
   "description": "Serve markdown file as index.html",
   "repository": "amio/serve-marked",
   "main": "index.js",
-  "scripts": {
-    "now-start": "node now-index.js"
-  },
   "author": "Amio <amio.cn@gmail.com>",
   "license": "ISC",
   "dependencies": {
