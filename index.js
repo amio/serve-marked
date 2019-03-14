@@ -1,6 +1,12 @@
 const fs = require('fs')
-const path = require('path')
 const marked = require('marked')
+const { join } = require('path')
+
+const presets = {
+  'default': fs.readFileSync(join(__dirname, `presets/default.css`), 'utf8'),
+  'github': fs.readFileSync(join(__dirname, `presets/github.css`), 'utf8'),
+  'merri': fs.readFileSync(join(__dirname, `presets/merri.css`), 'utf8')
+}
 
 module.exports = function (mdFile, helmetOptions) {
   const rawMD = fs.readFileSync(mdFile, 'utf8')
@@ -21,13 +27,13 @@ function helmet (bodyHTML, options = {}) {
   }
 
   const {
-    preset,
-    trackingGA,
     title = '',
+    preset = 'default',
     inlineCSS = '',
     contentClassName = 'markdown-body',
     beforeHeadEnd = '',
     beforeBodyEnd = '',
+    trackingGA,
   } = options
 
   return `<!DOCTYPE html>
@@ -36,7 +42,7 @@ function helmet (bodyHTML, options = {}) {
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width">
         <title>${title}</title>
-        ${getPresetStyle(preset)}
+        <style>${presets[preset]}</style>
         <style>${inlineCSS}</style>
         ${generateGAScript(trackingGA)}
         ${beforeHeadEnd}
@@ -49,14 +55,6 @@ function helmet (bodyHTML, options = {}) {
       </body>
     </html>
   `
-}
-
-function getPresetStyle (preset = 'default') {
-  const presetNames = ['merri', 'default']
-  if (!presetNames.includes(preset)) return ''
-
-  const cssFile = path.join(__dirname, `presets/${preset}.css`)
-  return `<style>${fs.readFileSync(cssFile, 'utf8')}</style>`
 }
 
 function generateGAScript (uaid) {
