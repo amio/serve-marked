@@ -52,8 +52,8 @@ function helmet (bodyHTML, options = {}) {
   `
 }
 
-function getPresetStyle (preset) {
-  const presetNames = ['merri']
+function getPresetStyle (preset = 'default') {
+  const presetNames = ['merri', 'default']
   if (!presetNames.includes(preset)) return ''
 
   const cssFile = path.join(__dirname, `presets/${preset}.css`)
