@@ -1,6 +1,8 @@
 # serve-marked
 
-[![version][npm-badge]][npm-link] [![size][pp-badge]][pp-link]
+[![version][npm-badge]][npm-link]
+[![size][size-badge]][size-link]
+![ISC](https://badgen.now.sh/badge/license/ISC/blue)
 
 Serve [marked][marked] rendered README.md file.
 
@@ -37,12 +39,13 @@ const serveReadme = serveMarked('./README.md', {
 })
 ```
 
-## License
+## Example
 
-![ISC](https://badgen.now.sh/badge/license/ISC/blue)
+- https://serve-marked.now.sh ([src](now-index-src))
 
 [npm-badge]: https://badgen.now.sh/npm/v/serve-marked
 [npm-link]: https://www.npmjs.com/package/serve-marked
-[pp-badge]: https://packagephobia.now.sh/badge?p=serve-marked
-[pp-link]: https://packagephobia.now.sh/result?p=serve-marked
+[size-badge]: https://badgen.net/bundlephobia/min/serve-marked
+[size-link]: https://bundlephobia.com/result?p=serve-marked
 [marked]: https://github.com/markedjs/marked
+[now-index-src]: https://github.com/amio/serve-marked/tree/master/now-index.js
