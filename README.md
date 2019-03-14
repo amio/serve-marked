@@ -41,11 +41,11 @@ const serveReadme = serveMarked('./README.md', {
 
 ## Example
 
-- https://serve-marked.now.sh ([src](now-index-src))
+- https://serve-marked.now.sh ([src][now-index-src])
 
 [npm-badge]: https://badgen.now.sh/npm/v/serve-marked
 [npm-link]: https://www.npmjs.com/package/serve-marked
 [size-badge]: https://badgen.net/bundlephobia/min/serve-marked
 [size-link]: https://bundlephobia.com/result?p=serve-marked
 [marked]: https://github.com/markedjs/marked
-[now-index-src]: https://github.com/amio/serve-marked/tree/master/now-index.js
+[now-index-src]: https://github.com/amio/serve-marked/blob/master/now-index.js
