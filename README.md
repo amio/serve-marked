@@ -1,9 +1,7 @@
 # serve-marked
 
-[![repo][github-src]][github-link]
 [![version][npm-badge]][npm-link]
-[![size][size-badge]][size-link]
-![ISC][license-src]
+[![repo][github-src]][github-link]
 
 Serve [marked][marked] rendered README.md file.
 
@@ -44,12 +42,14 @@ const serveReadme = serveMarked('./README.md', {
 
 - https://serve-marked.now.sh ([src][now-index-src])
 
-[github-src]: https://badgen.net/badge//amio%2Fserve-marked/black?icon=github
+## License
+
+![ISC][license-src]
+
+[github-src]: https://badgen.net/badge/-/amio%2Fserve-marked/black?icon=github&label=
 [github-link]: https://github.com/amio/serve-marked
 [license-src]: https://badgen.net/badge/license/ISC/blue
 [npm-badge]: https://badgen.net/npm/v/serve-marked
 [npm-link]: https://www.npmjs.com/package/serve-marked
-[size-badge]: https://badgen.net/bundlephobia/min/serve-marked
-[size-link]: https://bundlephobia.com/result?p=serve-marked
 [marked]: https://github.com/markedjs/marked
 [now-index-src]: https://github.com/amio/serve-marked/blob/master/now-index.js
