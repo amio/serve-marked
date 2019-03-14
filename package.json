@@ -5,12 +5,12 @@
   "repository": "amio/serve-marked",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"no test specified\""
+    "now-start": "node now-index.js"
   },
   "author": "Amio <amio.cn@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "marked": "^0.5.1"
+    "marked": "^0.6.1"
   },
   "keywords": [
     "serve",

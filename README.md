@@ -1,4 +1,6 @@
-# serve-marked [![version][npm-badge]][npm-link] [![size][pp-badge]][pp-link]
+# serve-marked
+
+[![version][npm-badge]][npm-link] [![size][pp-badge]][pp-link]
 
 Serve [marked][marked] rendered README.md file.
 

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "alias": "serve-marked",
+  "builds": [
+    { "src": "now-index.js", "use": "@now/node" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/now-index.js" }
+  ]
+}
