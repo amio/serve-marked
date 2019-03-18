@@ -1,8 +1,8 @@
 body { max-width: 760px; padding: 0 1rem; margin: 0 auto; font: 16px Merriweather; font-weight: 300; color: #333 }
 
-h1, h2, h3, h4, h5 { margin: 1.6em 0; font-family: Merriweather }
+h1, h2, h3, h4, h5, h6 { margin: 1.6em 0; font-family: Merriweather }
 h1 { font-size: 3rem; text-align: center; margin-bottom: 0.4em }
-h1 + p { text-align: center; color: #AAA }
+h1 + p { text-align: center; color: #AAA; margin-bottom: 4rem }
 
 p, li { font-weight: 300 }
 

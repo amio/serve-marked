@@ -1,11 +1,16 @@
 @import "https://sindresorhus.com/github-markdown-css/github-markdown.css";
 
-body { margin: 0; font-size: 14px }
+html, body { margin: 0; font-size: 14px }
 
 .markdown-body { max-width: 720px; margin: 0 auto 3rem auto; padding: 0 1em; }
-.markdown-body h1 { text-align: center; font: 2.4rem/10rem Merriweather, serif }
-.markdown-body h1 { width: 100vw; margin: 0 0 2rem calc(50% - 50vw); background-color: #F9F9F9 }
+.markdown-body h1 { text-align: center; letter-spacing: 0.2px; font: 2.6rem/1.2em Merriweather, serif; padding: 2em }
+.markdown-body h1 { width: 100vw; margin: 0 0 29px calc(50% - 50vw); background-color: #F9F9F9 }
+
 h2, h3, h4, h5, h6 { font: 1.5em/4em Merriweather, serif }
+
+@media (min-width: 1200px) {
+  .markdown-body h1 { font-size: 3.2rem }
+}
 
 /* Merriweather latin */
 @font-face {
