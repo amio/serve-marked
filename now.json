@@ -1,6 +1,7 @@
 {
   "version": 2,
-  "alias": "serve-marked",
+  "alias": "serve-marked.now.sh",
+  "regions": ["all"],
   "builds": [
     { "src": "now-index.js", "use": "@now/node" }
   ],
@@ -9,7 +10,7 @@
       "src": "/(.*)",
       "dest": "/now-index.js",
       "headers": {
-        "cache-control": "s-maxage=86400"
+        "cache-control": "public, max-age=360, s-maxage=2592000"
       }
     }
   ]
