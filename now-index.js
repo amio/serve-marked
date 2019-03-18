@@ -9,7 +9,9 @@ module.exports = serveMarked(readmeFile, {
   inlineCSS: `
     .markdown-body h1 + p {
       text-align: center;
-      margin: -2.6rem 0 4em 0;
+      margin: -40px 0 4rem 0;
+      line-height: 20px;
+      height: 20px;
     }
   `
 })

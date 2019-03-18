@@ -20,13 +20,12 @@ http.createServer((req, res) => {
 }).listen(3000)
 ```
 
-or you can use options:
+or you can use it with options:
 
 ```javascript
-// All options are optional
 const serveReadme = serveMarked('./README.md', {
   title: 'Awesome Project',
-  preset: 'merri',  // Available presets: 'default', 'merri'
+  preset: 'merri',  // Available presets: 'github', 'merri'
   contentClassName: 'main-body', // Default: 'markdown-body'
   inlineCSS: `
     @import url('https://rsms.me/inter/inter-ui.css');
