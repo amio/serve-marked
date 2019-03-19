@@ -13,9 +13,12 @@ module.exports = function (mdFile, helmetOptions) {
   const bodyHTML = marked(rawMD)
   const pageHTML = helmet(bodyHTML, helmetOptions)
   return function (req, res) {
-    res.writeHead(200, {
-      'Content-Type': 'text/html; charset=utf-8'
-    })
+    if (req.url === '/favicon.ico') {
+      res.writeHead(404, { 'Cache-Control': 'public, s-maxage=86400' })
+      return res.end()
+    }
+
+    res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' })
     res.end(pageHTML)
   }
 }
