@@ -7,7 +7,7 @@
   "author": "Amio <amio.cn@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "marked": "^0.6.1"
+    "marked": "^0.6.2"
   },
   "keywords": [
     "serve",
