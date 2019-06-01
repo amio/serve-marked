@@ -3,27 +3,30 @@
 [![version][npm-badge]][npm-link]
 [![repo][github-src]][github-link]
 
-Serve [marked][marked] rendered README.md file.
+Serve [marked][marked] rendered README.md file with elegant style.
 
 ## Usage
 
 `npm i serve-marked`
 
 ```javascript
+const fs = require('fs')
 const http = require('http')
 const serveMarked = require('serve-marked')
 
-const serveReadme = serveMarked('./README.md')
+const markdown = fs.readFileSync('./README.md', 'utf8')
+const serveReadme = serveMarked(markdown)
 
 http.createServer((req, res) => {
   if (req.url === '/') return serveReadme(req, res)
+  // other routes
 }).listen(3000)
 ```
 
 or you can use it with options:
 
 ```javascript
-const serveReadme = serveMarked('./README.md', {
+const serveReadme = serveMarked('# Markdown Content', {
   title: 'Awesome Project',
   preset: 'merri',  // Available presets: 'github', 'merri'
   contentClassName: 'main-body', // Default: 'markdown-body'

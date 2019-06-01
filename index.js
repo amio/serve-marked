@@ -8,9 +8,8 @@ const presets = {
   'merri': fs.readFileSync(join(__dirname, `presets/merri.css`), 'utf8')
 }
 
-module.exports = function (mdFile, helmetOptions) {
-  const rawMD = fs.readFileSync(mdFile, 'utf8')
-  const bodyHTML = marked(rawMD)
+module.exports = function (markdown, helmetOptions) {
+  const bodyHTML = marked(markdown)
   const pageHTML = helmet(bodyHTML, helmetOptions)
   return function (req, res) {
     if (req.url === '/favicon.ico') {
