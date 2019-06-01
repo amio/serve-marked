@@ -17,10 +17,7 @@ const serveMarked = require('serve-marked')
 const markdown = fs.readFileSync('./README.md', 'utf8')
 const serveReadme = serveMarked(markdown)
 
-http.createServer((req, res) => {
-  if (req.url === '/') return serveReadme(req, res)
-  // other routes
-}).listen(3000)
+http.createServer(serveReadme).listen(3000)
 ```
 
 or you can use it with options:
