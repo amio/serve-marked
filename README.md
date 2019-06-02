@@ -2,6 +2,7 @@
 
 [![version][npm-badge]][npm-link]
 [![repo][github-src]][github-link]
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Famio%2Fserve-marked.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Famio%2Fserve-marked?ref=badge_shield)
 
 Serve [marked][marked] rendered README.md file with elegant style.
 
@@ -52,3 +53,6 @@ const serveReadme = serveMarked('# Markdown Content', {
 [npm-link]: https://www.npmjs.com/package/serve-marked
 [marked]: https://github.com/markedjs/marked
 [now-index-src]: https://github.com/amio/serve-marked/blob/master/now-index.js
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Famio%2Fserve-marked.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Famio%2Fserve-marked?ref=badge_large)
