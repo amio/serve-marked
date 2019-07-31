@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const http = require('http')
-const serveMarked = require('.')
+const serveMarked = require('./index.js')
 
 const readmeFile = path.join(__dirname, 'README.md')
 const readmeContent = fs.readFileSync(readmeFile, 'utf8')
