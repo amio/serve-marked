@@ -2,7 +2,6 @@
   "version": 2,
   "public": true,
   "alias": "serve-marked",
-  "regions": ["sfo", "bru"],
   "builds": [
     { "src": "now-index.js", "use": "@now/node" }
   ],
