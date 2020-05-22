@@ -6,9 +6,19 @@ const presets = {
   'merri': require('./presets/merri.css'),
 }
 
-export default function serveMarked (markdown: string, helmetOptions: Record<string, string>) {
+interface HTMLOptions {
+  title?: string;
+  preset?: string;
+  inlineCSS?: string;
+  contentClassName?: string;
+  beforeHeadEnd?: string;
+  beforeBodyEnd?: string;
+  trackingGA?: string;
+}
+
+export default function serveMarked (markdown: string, options?: HTMLOptions) {
   const bodyHTML = marked(markdown)
-  const pageHTML = helmet(bodyHTML, helmetOptions)
+  const pageHTML = helmet(bodyHTML, options)
   return function (req, res) {
     if (req.url === '/favicon.ico') {
       res.writeHead(404, { 'Cache-Control': 'public, s-maxage=86400' })
@@ -16,16 +26,11 @@ export default function serveMarked (markdown: string, helmetOptions: Record<str
     }
 
     res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' })
-    res.end(pageHTML)
+    return res.end(pageHTML)
   }
 }
 
-function helmet (bodyHTML: string, options: any = {}) {
-  // Custom body wrapper
-  if (typeof options === 'function') {
-    return options(bodyHTML)
-  }
-
+function helmet (bodyHTML: string, options: HTMLOptions = {}) {
   const {
     title = '',
     preset = 'default',

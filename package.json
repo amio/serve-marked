@@ -4,6 +4,7 @@
   "description": "Serve markdown file as index.html",
   "repository": "amio/serve-marked",
   "main": "dist/index.min.js",
+  "types": "dist/index.d.ts",
   "author": "Amio <amio.cn@gmail.com>",
   "license": "ISC",
   "scripts": {
@@ -21,6 +22,7 @@
     "html"
   ],
   "devDependencies": {
-    "@types/node": "^14.0.5"
+    "@types/node": "^14.0.5",
+    "typescript": "^3.9.3"
   }
 }
