@@ -1,4 +1,4 @@
-const marked = require('marked')
+import marked from 'marked'
 
 const presets = {
   'default': require('./presets/default.css'),
@@ -6,7 +6,7 @@ const presets = {
   'merri': require('./presets/merri.css'),
 }
 
-export default function (markdown, helmetOptions) {
+export default function serveMarked (markdown: string, helmetOptions: Record<string, string>) {
   const bodyHTML = marked(markdown)
   const pageHTML = helmet(bodyHTML, helmetOptions)
   return function (req, res) {
@@ -20,7 +20,7 @@ export default function (markdown, helmetOptions) {
   }
 }
 
-function helmet (bodyHTML, options: any = {}) {
+function helmet (bodyHTML: string, options: any = {}) {
   // Custom body wrapper
   if (typeof options === 'function') {
     return options(bodyHTML)

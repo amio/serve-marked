@@ -7,7 +7,7 @@
   "author": "Amio <amio.cn@gmail.com>",
   "license": "ISC",
   "scripts": {
-    "build": "npx esbuild --bundle src/index.ts --minify --loader:.css=text --outdir=dist --platform=node"
+    "build": "npx esbuild --bundle src/index.ts --minify --loader:.css=text --outdir=dist --platform=node --external:marked"
   },
   "dependencies": {
     "marked": "^1.1.0"
