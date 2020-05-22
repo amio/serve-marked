@@ -60,6 +60,8 @@ function helmet (bodyHTML: string, options: any = {}) {
 function generateGAScript (uaid) {
   if (typeof uaid !== 'string') return ''
 
+  console.warn('serve-marked: `trackingGA` option is deprecated. Please use `beforeHeadEnd` or `beforeBodyEnd` instead.')
+
   return `
     <script async src="https://www.googletagmanager.com/gtag/js?id=${uaid}"></script>
     <script>
