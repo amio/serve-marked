@@ -1,14 +1,12 @@
-const fs = require('fs')
 const marked = require('marked')
-const { join } = require('path')
 
 const presets = {
-  'default': fs.readFileSync(join(__dirname, `presets/default.css`), 'utf8'),
-  'github': fs.readFileSync(join(__dirname, `presets/github.css`), 'utf8'),
-  'merri': fs.readFileSync(join(__dirname, `presets/merri.css`), 'utf8')
+  'default': require('./presets/default.css'),
+  'github': require('./presets/github.css'),
+  'merri': require('./presets/merri.css'),
 }
 
-module.exports = function (markdown, helmetOptions) {
+export default function (markdown, helmetOptions) {
   const bodyHTML = marked(markdown)
   const pageHTML = helmet(bodyHTML, helmetOptions)
   return function (req, res) {
@@ -22,7 +20,7 @@ module.exports = function (markdown, helmetOptions) {
   }
 }
 
-function helmet (bodyHTML, options = {}) {
+function helmet (bodyHTML, options: any = {}) {
   // Custom body wrapper
   if (typeof options === 'function') {
     return options(bodyHTML)
