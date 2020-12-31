@@ -21,11 +21,13 @@ export default function serveMarked (markdown: string, options?: HTMLOptions) {
   const pageHTML = helmet(bodyHTML, options)
   return function (req, res) {
     if (req.url === '/favicon.ico') {
-      res.writeHead(404, { 'Cache-Control': 'public, s-maxage=86400' })
+      res.setHeader('Cache-Control', 'public, maxage=86400')
+      res.statusCode = 404
       return res.end()
     }
 
-    res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' })
+    res.setHeader('Content-Type', 'text/html; charset=utf-8')
+    res.statusCode = 404
     return res.end(pageHTML)
   }
 }
