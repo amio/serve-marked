@@ -1,0 +1,25 @@
+{
+  "alias": "serve-marked",
+  "functions": {
+    "api/**/*": {
+      "includeFiles": "dist/**"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/api"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "public, max-age=360, s-maxage=2592000"
+        }
+      ]
+    }
+  ]
+}

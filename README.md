@@ -12,7 +12,7 @@ Serve [marked][marked] rendered README.md file with elegant style.
 ```javascript
 const fs = require('fs')
 const http = require('http')
-const serveMarked = require('serve-marked').default
+const { serveMarked } = require('serve-marked')
 
 const markdown = fs.readFileSync('./README.md', 'utf8')
 const serveReadme = serveMarked(markdown)
