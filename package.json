@@ -12,7 +12,7 @@
     "prepack": "npm run build"
   },
   "dependencies": {
-    "marked": "^1.1.0"
+    "marked": "^4.0.16"
   },
   "keywords": [
     "serve",
