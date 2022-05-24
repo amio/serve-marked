@@ -1,9 +1,9 @@
 const fs = require('fs')
 const path = require('path')
 const http = require('http')
-const serveMarked = require('.').default
+const { serveMarked } = require('..')
 
-const readmeFile = path.join(__dirname, 'README.md')
+const readmeFile = path.join(__dirname, '../README.md')
 const readmeContent = fs.readFileSync(readmeFile, 'utf8')
 
 module.exports = serveMarked(readmeContent, {
@@ -20,4 +20,5 @@ module.exports = serveMarked(readmeContent, {
 
 if (require.main === module) {
   http.createServer(module.exports).listen(3000)
+  console.log(`Running at http://localhost:3000`)
 }

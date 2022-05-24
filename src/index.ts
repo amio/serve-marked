@@ -1,4 +1,4 @@
-import marked from 'marked'
+import { marked } from 'marked'
 
 const presets = {
   'default': require('./presets/default.css'),
@@ -16,7 +16,7 @@ interface HTMLOptions {
   trackingGA?: string;
 }
 
-export default function serveMarked (markdown: string, options?: HTMLOptions) {
+export function serveMarked (markdown: string, options?: HTMLOptions) {
   const bodyHTML = marked(markdown)
   const pageHTML = helmet(bodyHTML, options)
   return function (req, res) {

@@ -1,4 +1,4 @@
 .vercel
-now-index.js
-now.json
+vercel.json
+api
 src
