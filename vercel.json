@@ -1,7 +1,7 @@
 {
   "alias": "serve-marked",
   "functions": {
-    "api/**/*": {
+    "api/*": {
       "includeFiles": "dist/**"
     }
   },
