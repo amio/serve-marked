@@ -12,7 +12,8 @@
     "prepack": "npm run build"
   },
   "dependencies": {
-    "marked": "^4.0.16"
+    "marked": "^4.0.16",
+    "sanitize-html": "^2.7.2"
   },
   "keywords": [
     "serve",
