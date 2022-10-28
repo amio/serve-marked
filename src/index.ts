@@ -1,4 +1,5 @@
 import { marked } from 'marked'
+import sanitizeHtml from 'sanitize-html'
 
 const presets = {
   'default': require('./presets/default.css'),
@@ -17,7 +18,7 @@ interface HTMLOptions {
 }
 
 export function serveMarked (markdown: string, options?: HTMLOptions) {
-  const bodyHTML = marked(markdown)
+  const bodyHTML = sanitizeHtml(marked(markdown))
   const pageHTML = helmet(bodyHTML, options)
   return function (req, res) {
     if (req.url === '/favicon.ico') {
