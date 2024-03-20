@@ -12,8 +12,8 @@
     "prepack": "npm run build"
   },
   "dependencies": {
-    "marked": "^4.0.16",
-    "sanitize-html": "^2.7.2"
+    "insane": "^2.6.2",
+    "marked": "^12.0.1"
   },
   "keywords": [
     "serve",
@@ -24,7 +24,7 @@
   ],
   "devDependencies": {
     "@types/node": "^18.19.26",
-    "esbuild": "^0.14.39",
+    "esbuild": "^0.20.2",
     "typescript": "^5.4.2"
   }
 }

@@ -36,6 +36,11 @@ const serveReadme = serveMarked('# Markdown Content', {
 })
 ```
 
+WARNING: serve-marked does not sanitize the output HTML. Please use a sanitize library,
+like [DOMPurify](https://github.com/cure53/DOMPurify),
+[sanitize-html](https://github.com/apostrophecms/sanitize-html)
+or [insane](https://github.com/bevacqua/insane) on the output HTML!
+
 ## Example
 
 - https://serve-marked.now.sh ([src][now-index-src])
