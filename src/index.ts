@@ -28,7 +28,7 @@ export function serveMarked (markdown: string, options?: HTMLOptions) {
     }
 
     res.setHeader('Content-Type', 'text/html; charset=utf-8')
-    res.statusCode = 404
+    res.statusCode = 200
     return res.end(pageHTML)
   }
 }
