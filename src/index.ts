@@ -7,17 +7,27 @@ const presets = {
 }
 
 interface HTMLOptions {
+  /** HTML Title */
   title?: string;
-  preset?: string;
+  /** Alternative style preset */
+  preset?: 'default' | 'github' | 'merri';
+  /** Custom stylesheet */
   inlineCSS?: string;
+  /** Custom classname for markdown content div */
   contentClassName?: string;
+  /** Inject custom script or tags before html head end */
   beforeHeadEnd?: string;
+  /** Inject custom script or tags before body tag end */
   beforeBodyEnd?: string;
+  /** @deprecated Use beforeHeadEnd or beforeBodyEnd to inject custom scripts */
   trackingGA?: string;
+  /** HTML sanitizer */
+  sanitizer?: (string) => string;
 }
 
 export function serveMarked (markdown: string, options?: HTMLOptions) {
-  const bodyHTML = marked.parse(markdown) as string
+  const sanitizer = options?.sanitizer || (html => html)
+  const bodyHTML = sanitizer(marked.parse(markdown) as string)
   const pageHTML = helmet(bodyHTML, options)
   return function (req, res) {
     if (req.url === '/favicon.ico') {
