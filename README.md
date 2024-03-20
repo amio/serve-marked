@@ -33,8 +33,14 @@ const serveReadme = serveMarked('# Markdown Content', {
   `,
   beforeHeadEnd: '<meta name="description" content="...">',
   beforeBodyEnd: '<script>/*...*/</script>',
+  sanitizer: (htmlString) => sanitize(htmlString) // bring your own html sanitizer if needed
 })
 ```
+
+WARNING: serve-marked does not sanitize the output HTML. Please use a sanitize library,
+like [DOMPurify](https://github.com/cure53/DOMPurify),
+[sanitize-html](https://github.com/apostrophecms/sanitize-html)
+or [insane](https://github.com/bevacqua/insane) on the output HTML!
 
 ## Example
 
