@@ -1,6 +1,6 @@
 {
   "name": "serve-marked",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "Serve markdown file as index.html",
   "repository": "amio/serve-marked",
   "main": "dist/index.js",
