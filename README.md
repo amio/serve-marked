@@ -33,6 +33,7 @@ const serveReadme = serveMarked('# Markdown Content', {
   `,
   beforeHeadEnd: '<meta name="description" content="...">',
   beforeBodyEnd: '<script>/*...*/</script>',
+  sanitizer: (htmlString) => sanitize(htmlString) // bring your own html sanitizer if needed
 })
 ```
 
