@@ -5,6 +5,8 @@
 
 Serve [marked][marked] rendered README.md file with elegant style.
 
+> PRJECT ARCHIVED: See the successor [hyper-marked](https://github.com/amio/hyper-marked)
+
 ## Usage
 
 `npm i serve-marked`
